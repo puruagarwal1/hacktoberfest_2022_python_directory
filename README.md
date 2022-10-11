@@ -1,0 +1,2 @@
+# hacktoberfest_2022_python_directory
+hacktoberfest accepted
