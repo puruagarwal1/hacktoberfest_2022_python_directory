@@ -14,6 +14,6 @@ def fun(choice,list1):
 
 l=[10,56,20,5,4,70,100,30,34,27,7]
 f=['asc','desc','none']
-ch = input(f'ENter Choice from{f} :  ')
+ch = input(f'Enter Choice from{f} :  ')
 l2 = fun(ch,l)
 print(l2)
