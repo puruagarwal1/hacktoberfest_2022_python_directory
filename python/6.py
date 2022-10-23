@@ -1,7 +1,7 @@
 def doub(s1):
     s2=""
-    for alphabet in s1:
-        s2 = s2+alphabet+alphabet
+    for a in s1:
+        s2 += a*2
     return s2
-st = input('Enter String: ')
+st = input('Enter String : ')
 print(doub(st))

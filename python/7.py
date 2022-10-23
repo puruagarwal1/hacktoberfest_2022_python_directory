@@ -1,7 +1,7 @@
-def todict(s):
-    f=0;mydict={};set1= set(s)
-    for item in s:
-        mydict.update({item:s.count(item)})
+def alphacount(str):
+    mydict={}
+    for item in str:
+        mydict.update({item:str.count(item)})
     return mydict
-st = 'google.com'
-print((todict(st)))
+str = input("Enter a string : ")
+print(alphacount(str))

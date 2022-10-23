@@ -33,11 +33,10 @@ int main()
     printf("\nEnter your choice:\n----------------------------\n");
     printf("1 for Insertion\n2 for Deletion\n3 Traverse\n4 Exit\n");
     scanf("%d",&ch);
-    int oh;
+    int oh,no,pos;
     switch (ch)
     {
     case 1:
-        int no;
         printf("\n1.Insertion at beggining\n2.Insertion at end\n3.Insertion at specified location\n");
         scanf("%d",&oh);
         switch (oh)
@@ -53,7 +52,6 @@ int main()
             head=addtoend(head,no);
             break;
         case 3:
-            int pos;
             printf("Enter Data for Inserting Node: ");
             scanf("%d",&no);
             printf("Enter Position for Inserting Node: ");
@@ -78,7 +76,6 @@ int main()
             head=deleteend(head);
             break;
         case 3:
-            int pos;
             printf("Enter Position for Deleting Node: ");
             scanf("%d",&pos);
             head=deletepos(head,pos);
