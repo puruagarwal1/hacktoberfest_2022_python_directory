@@ -1,51 +1,38 @@
-#include<stdio.h> //Header file
-void linear(int ar[], int l, int n) //function for linear search 
+
+//code for linear search(unsorted)
+
+
+#include <stdio.h>
+ 
+int search(int array[], int n, int x)
 {
-    for(int i=0;i<l;i++)
-    {
-        if(ar[i] == n)
-        {
-        printf("Found Item at index %d",i);
-        exit(0); //if Element found exit the program
-        }
-    }
-    printf("Element not found");
+    for (int i = 0; i < n; i++)
+        if (array[i] == x)
+            return i;
+    return -1;
 }
-void binary(int ar[], int l, int n)//function for binary search 
+
+//code for binary search(sorted)
+
+
+#include <stdio.h>
+ 
+int binarySearch(int array[], int x, int low, int high)
 {
-    for(int i=0;i<=l/2;i++)
-    {
-        if(ar[i]==n)
-        {
-        printf("Found Item at index %d",n);
-        exit(0);
-        }
-        else if(ar[l-i-1]==n)
-        {
-        printf("Found Item at index %d",(l-i-1));
-        exit(0);
-        }
+    // Repeat until the pointers low and high meet each
+    // other
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+ 
+        if (array[mid] == x)
+            return mid;
+ 
+        if (array[mid] < x)
+            low = mid + 1;
+ 
+        else
+            high = mid - 1;
     }
-    printf("Element not found"); //if element not found program will print this
-    
-}
-void main() // main function 
-{
-    int i,n,ch,find; //declaring variables
-    printf("Enter the length of the array: ");
-    scanf("%d",&n);
-    int arr[n];
-    printf("Enter the elements of the array: ");
-    for(i=0;i<n;i++)
-    scanf("%d",&arr[i]);
-    printf("Enter Element to be searched: ");
-    scanf("%d",&find);
-    printf("Enter 1 for binary serch & 2 for linear search: ");
-    scanf("%d",&ch);
-    if(ch==1)
-    binary(arr,n,find);
-    else if(ch==2)
-    linear(arr,n,find);
-    else
-    printf("Wrong Choice");
+ 
+    return -1;
 }
